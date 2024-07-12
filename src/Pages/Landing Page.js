@@ -6,6 +6,7 @@ import ServiceCard from "../Components/Service Card";
 import Footer from "../Components/Footer";
 import ScrollTop from "../Components/Scrolltop";
 import Testimonials from "../Components/Testimonials";
+import Business from "../Components/Business";
 
 const LandingPage = () => {
   return (
@@ -20,6 +21,7 @@ const LandingPage = () => {
           <Stats number="45" title="MENTORS" />
           <Stats number="150" title="EVENTS" />
         </div>
+        <Business />
         <ServiceCard />
         <Testimonials />
         <Footer />
