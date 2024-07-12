@@ -1,8 +1,8 @@
 import React from "react";
 import appstore from "../Images/appstore.svg";
-import bill from "../Images/bill.png";
+import saas from "../Images/saas.avif";
 import playstore from "../Images/playstore.svg";
-import card from "../Images/card.png";
+import saas1 from "../Images/saas1.jpg";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineSecurity } from "react-icons/md";
 import { GiBanknote } from "react-icons/gi";
@@ -46,9 +46,9 @@ const Business = () => {
               You do the business, we'll handle the money.
             </h1>
             <p className="text-dimWhite text-base sm:text-lg">
-              With the right credit card, you can improve your financial life by
-              building credit, earning rewards and saving money. But with
-              hundreds of credit cards on the market.
+              With the right saas product, you can improve your financial life
+              by building credit, earning rewards and saving money. But with
+              hundreds of different saas on the market.
             </p>
             <button
               type="button"
@@ -64,7 +64,7 @@ const Business = () => {
             <BusinessCard
               icon={<FaStar />}
               title="Rewards"
-              desc="The best credit cards offer some tantalizing combinations of promotions and prizes"
+              desc="The best saas offer some tantalizing combinations of promotions and prizes"
             />
             <BusinessCard
               icon={<MdOutlineSecurity />}
@@ -73,8 +73,8 @@ const Business = () => {
             />
             <BusinessCard
               icon={<GiBanknote />}
-              title="Balance Transfgi"
-              desc="A balance transfer credit card can save you a lot of money in interest charges."
+              title="Balance Transfer"
+              desc="A balance transfer  can save you a lot of money in interest charges."
             />
           </div>
         </div>
@@ -83,7 +83,7 @@ const Business = () => {
         <div className="flex flex-col md:flex-row gap-10 md:gap-5">
           <div className="flex-1">
             <img
-              src={bill}
+              src={saas}
               alt="bill"
               className="w-full h-full object-contain md:object-fill"
             />
@@ -118,7 +118,7 @@ const Business = () => {
         <div className="flex md:flex-row flex-col gap-10">
           <div className="flex flex-col gap-7 sm:gap-10 flex-1">
             <h1 className="text-3xl ss:text-4xl md:text-5xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
-              Find a better card deal in few easy steps.
+              Find a better saas deal in few easy steps.
             </h1>
             <div className="flex flex-col gap-3">
               <Steps title="Choose the carding type that suits your needs" />
@@ -137,7 +137,7 @@ const Business = () => {
 
           <div className="flex-1">
             <img
-              src={card}
+              src={saas1}
               alt="card payment method"
               className="w-full h-full object-contain"
             />

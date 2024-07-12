@@ -84,7 +84,7 @@ const SocialMedia = ({ icon, name, link }) => {
 const Footer = () => {
   const date = new Date().getFullYear();
   return (
-    <section className="relative font-poppins pb-10 sm:pb-16">
+    <section className="relative font-poppins pb-10 sm:pb-16 pt-10">
       <div className="flex items-start md:flex-row flex-col gap-10 md:gap-24">
         <div className="md:max-w-[370px]">
           <h2 className="text-3xl">Ethaum.</h2>

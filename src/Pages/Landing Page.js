@@ -7,6 +7,9 @@ import Footer from "../Components/Footer";
 import ScrollTop from "../Components/Scrolltop";
 import Testimonials from "../Components/Testimonials";
 import Business from "../Components/Business";
+import Pricing from "../Components/New Pricing";
+import Category from "../Components/Category";
+import Featured from "../Components/Featured Products";
 
 const LandingPage = () => {
   return (
@@ -22,8 +25,11 @@ const LandingPage = () => {
           <Stats number="150" title="EVENTS" />
         </div>
         <Business />
+        <Featured />
         <ServiceCard />
         <Testimonials />
+        <Category />
+        <Pricing />
         <Footer />
       </div>
     </div>
