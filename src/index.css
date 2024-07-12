@@ -107,7 +107,8 @@
 }
 
 .feature-card:hover {
-  background: var(--black-gradient);
+  --tw-bg-opacity: 1;
+  background: rgb(31 41 55 / var(--tw-bg-opacity));
   box-shadow: var(--card-shadow);
 }
 
@@ -183,4 +184,16 @@
 }
 .social-icon:hover .social-media-icon:nth-child(5) {
   background-color: #32abff;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.shadowbutton{
+  box-shadow: 10px 0 10px -10px white, -10px 0 10px -10px white;
 }
