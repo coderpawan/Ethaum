@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Hero from "../Components/Hero";
 import Stats from "../Components/Stats";
@@ -10,11 +10,37 @@ import Business from "../Components/Business";
 import Pricing from "../Components/New Pricing";
 import Category from "../Components/Category";
 import Featured from "../Components/Featured Products";
+import { jwtDecode } from "jwt-decode";
 
 const LandingPage = () => {
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    // Function to get the token from the URL
+    const getTokenFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("token");
+    };
+
+    // Extract the token
+    const token = getTokenFromUrl();
+
+    if (token) {
+      // Decode the token to get user information
+      const decoded = jwtDecode(token);
+
+      // Store the token in local storage
+      localStorage.setItem("token", token);
+
+      // Set the user state
+      console.log(decoded.picture);
+      setUser(decoded);
+    }
+  }, []);
   return (
     <div className="bg-primary text-white w-full h-full">
-      <Navbar />
+      {/* {user ? <Navbar user={user} /> : <Navbar />} */}
+
+      <Navbar user={user} />
       <ScrollTop />
       <div className="container px-5 md:px-10 mx-auto ">
         <Hero />
