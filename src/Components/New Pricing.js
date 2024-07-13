@@ -6,7 +6,7 @@ const PricingTable = () => {
   return (
     <div className="relative font-inter antialiased">
       <main className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-6">
           <div>
             <h1 className="text-3xl ss:text-4xl md:text-5xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
               Curated Security Packages

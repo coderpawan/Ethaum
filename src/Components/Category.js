@@ -40,7 +40,7 @@ const Card = () => {
 const Category = () => {
   return (
     <>
-      <div className="py-8 px-12 bg-slate-800 rounded-3xl">
+      <div className="py-8 mb-24 px-12 bg-slate-800 rounded-3xl">
         <h1 className="text-2xl ss:text-3xl md:text-4xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
           Popular software brands across all categories
         </h1>

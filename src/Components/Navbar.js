@@ -1,16 +1,18 @@
 import React from "react";
 import Logo from "../Images/ethaum.png";
 
-const divbar = () => {
+const Navbar = () => {
   return (
     <>
       <div class=" antialiased bg-primary pb-16 text-white">
         <div class="container shadow-lg mx-auto px-4 py-6 flex items-center justify-between">
-          <img src={Logo} alt="" className="h-10 w-36 z-100" />
+          <a href="/" className="">
+            <img src={Logo} alt="" className="h-10 w-36 z-100" />
+          </a>
           <div>
             <ul class="hidden sm:flex items-center justify-center font-semibold">
               <li class="relative group px-3 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-                <button class="cursor-default">Products</button>
+                <button class="cursor-pointer">Products</button>
                 <div class="absolute top-2 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
                   <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                     <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
@@ -103,7 +105,7 @@ const divbar = () => {
                 </div>
               </li>
               <li class="relative group px-3 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-                <button class=" cursor-default">Solutions</button>
+                <button class=" cursor-pointer">Solutions</button>
                 <div class="absolute top-2 -left-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[260px] transform">
                   <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                     <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 -translate-x-4 transition-transform group-hover:translate-x-3 duration-500 ease-in-out rounded-sm"></div>
@@ -158,7 +160,7 @@ const divbar = () => {
                 </div>
               </li>
               <li class="relative group px-3 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-                <button class=" cursor-default">Developers</button>
+                <button class=" cursor-pointer">Developers</button>
                 <div class="absolute top-2 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
                   <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                     <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
@@ -258,7 +260,7 @@ const divbar = () => {
                 </div>
               </li>
               <li class="relative group px-3 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-                <button class=" cursor-default">Resources</button>
+                <button class=" cursor-pointer">Resources</button>
                 <div class="absolute top-2 -left-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[200px] transform">
                   <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                     <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 -translate-x-4 transition-transform group-hover:translate-x-3 duration-500 ease-in-out rounded-sm"></div>
@@ -310,13 +312,13 @@ const divbar = () => {
                 </div>
               </li>
               <li class="relative group px-3 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-                <a href="/" class=" cursor-default">
+                <a href="/price" class=" cursor-pointer">
                   Pricing
                 </a>
               </li>
               <li className="">
                 <a
-                  href="/"
+                  href="/signup"
                   class="rounded-full px-3 py-2 text-white hover:text-gray-700 font-semibold cursor-pointer lg:px-4  hover:bg-gray-300 flex items-center group"
                 >
                   <span class="mr-2">Sign in</span>
@@ -346,7 +348,7 @@ const divbar = () => {
             <ul class="flex sm:hidden items-center justify-center font-semibold">
               <li className="">
                 <a
-                  href="/"
+                  href="/signup"
                   class="rounded-full px-3 py-2 text-white hover:text-gray-700 font-semibold cursor-pointer lg:px-4  hover:bg-gray-300 flex items-center group"
                 >
                   <span class="mr-2">Sign in</span>
@@ -376,7 +378,7 @@ const divbar = () => {
         </div>
         <ul className="flex sm:hidden items-center justify-center font-semibold">
           <li class="relative group px-1 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-            <button class="cursor-default">Products</button>
+            <button class="cursor-pointer">Products</button>
             <div class="absolute top-2 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
               <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                 <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
@@ -469,7 +471,7 @@ const divbar = () => {
             </div>
           </li>
           <li class="relative group px-1 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-            <button class=" cursor-default">Solutions</button>
+            <button class=" cursor-pointer">Solutions</button>
             <div class="absolute top-2 -left-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[260px] transform">
               <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                 <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 -translate-x-4 transition-transform group-hover:translate-x-3 duration-500 ease-in-out rounded-sm"></div>
@@ -524,7 +526,7 @@ const divbar = () => {
             </div>
           </li>
           <li class="relative group px-1 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-            <button class=" cursor-default">Developers</button>
+            <button class=" cursor-pointer">Developers</button>
             <div class="absolute top-2 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
               <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                 <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
@@ -624,7 +626,7 @@ const divbar = () => {
             </div>
           </li>
           <li class="relative group px-1 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-            <button class=" cursor-default">Resources</button>
+            <button class=" cursor-pointer">Resources</button>
             <div class="absolute top-2 -left-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[200px] transform">
               <div class="relative top-6 p-6 bg-white rounded-xl shadow-xl w-full">
                 <div class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 -translate-x-4 transition-transform group-hover:translate-x-3 duration-500 ease-in-out rounded-sm"></div>
@@ -676,7 +678,7 @@ const divbar = () => {
             </div>
           </li>
           <li class="relative group px-1 py-2 text-white hover:text-gray-700 font-semibold rounded-lg cursor-pointer lg:px-4  hover:bg-gray-300">
-            <a href="/" class=" cursor-default">
+            <a href="/" class=" cursor-pointer">
               Pricing
             </a>
           </li>
@@ -691,4 +693,4 @@ const divbar = () => {
   );
 };
 
-export default divbar;
+export default Navbar;
