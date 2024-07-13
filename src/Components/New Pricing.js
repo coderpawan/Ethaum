@@ -64,7 +64,7 @@ const PricingTable = () => {
 
             <div className="max-w-sm mx-auto block sm:flex gap-6 items-start lg:max-w-none">
               {/* Pricing tab 1 */}
-              <div className="h-full mt-10">
+              <div className="h-full mt-10 mb-10 sm:mb-0">
                 <div className="relative flex flex-col h-full rounded-2xl  border-2 border-slate-900 dark:border-slate-900 shadow shadow-slate-950/5">
                   <div className="mb-5 p-6 bg-white dark:bg-slate-900 rounded-t-2xl">
                     <div className="text-slate-900 dark:text-slate-200 font-semibold mb-1">

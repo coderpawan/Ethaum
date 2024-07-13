@@ -59,7 +59,7 @@ const FAQ = () => {
   return (
     <div className=" text-white py-12 sm:px-6">
       <div className="mx-auto text-center">
-        <div className="px-56">
+        <div className="sm:px-56">
           <h2 className="text-3xl font-bold mb-6">
             Frequently Asked Questions
           </h2>
@@ -69,7 +69,7 @@ const FAQ = () => {
             us for personalized help.
           </p>
         </div>
-        <div className="px-32">
+        <div className="sm:px-32">
           {faqs.map((faq, index) => (
             <FaqItem
               key={index}
