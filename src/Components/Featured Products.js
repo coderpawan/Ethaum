@@ -1,175 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Apple from "../Images/apple-watch.png";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const [activeToggle, setActiveToggle] = useState("Featured");
+  const [cardData, setCardData] = useState({
+    Featured: [],
+    "Top Deals": [],
+    Popular: [],
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://ethaum-backend.vercel.app/api/products/"
+        );
+        const data = response.data;
+
+        const featured = data
+          .filter((item) => item.type === "Featured")
+          .slice(0, 6);
+        const topDeals = data
+          .filter((item) => item.type === "Top Deals")
+          .slice(0, 6);
+        const popular = data
+          .filter((item) => item.type === "Popular")
+          .slice(0, 6);
+
+        setCardData({
+          Featured: featured,
+          "Top Deals": topDeals,
+          Popular: popular,
+        });
+        console.log(cardData);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleToggle = (toggle) => {
     setActiveToggle(toggle);
   };
 
-  const cardData = {
-    Featured: [
-      {
-        id: 1,
-        title: "Featured Card 1",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 700,
-      },
-      {
-        id: 2,
-        title: "Featured Card 2",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 2,
-        price: 800,
-      },
-      {
-        id: 3,
-        title: "Featured Card 3",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 4,
-        price: 400,
-      },
-      {
-        id: 4,
-        title: "Featured Card 4",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 1,
-        price: 500,
-      },
-      {
-        id: 5,
-        title: "Featured Card 5",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 400,
-      },
-      {
-        id: 6,
-        title: "Featured Card 6",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 2,
-        price: 700,
-      },
-    ],
-    "Top Deals": [
-      {
-        id: 1,
-        title: "Top Deals Card 1",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 5,
-        price: 800,
-      },
-      {
-        id: 2,
-        title: "Top Deals Card 2",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 100,
-      },
-      {
-        id: 3,
-        title: "Top Deals Card 3",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 4,
-        price: 200,
-      },
-      {
-        id: 4,
-        title: "Top Deals Card 4",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 2,
-        price: 600,
-      },
-      {
-        id: 5,
-        title: "Top Deals Card 5",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 500,
-      },
-      {
-        id: 6,
-        title: "Top Deals Card 6",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 100,
-      },
-    ],
-    Popular: [
-      {
-        id: 1,
-        title: "Popular Card 1",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 500,
-      },
-      {
-        id: 2,
-        title: "Popular Card 2",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 4,
-        price: 900,
-      },
-      {
-        id: 3,
-        title: "Popular Card 3",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 1,
-        price: 800,
-      },
-      {
-        id: 4,
-        title: "Popular Card 4",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 2,
-        price: 700,
-      },
-      {
-        id: 5,
-        title: "Popular Card 5",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 3,
-        price: 600,
-      },
-      {
-        id: 6,
-        title: "Popular Card 6",
-        details:
-          "For SaaS platforms hosted in the public cloud. You want to build standard cyber security resilience without a CISO.",
-        star: 5,
-        price: 200,
-      },
-    ],
-  };
-
   const renderStars = (rating) => {
-    // Calculate full stars count and empty stars count
     const fullStarsCount = Math.floor(rating);
     const emptyStarsCount = 5 - fullStarsCount;
-
-    // Array to store the JSX elements for full and empty stars
     const stars = [];
 
-    // Add full star SVG elements
     for (let i = 0; i < fullStarsCount; i++) {
       stars.push(
         <svg
@@ -185,7 +67,6 @@ const Featured = () => {
       );
     }
 
-    // Add empty star SVG elements
     for (let i = 0; i < emptyStarsCount; i++) {
       stars.push(
         <svg
@@ -212,41 +93,44 @@ const Featured = () => {
 
   const Card = () => {
     return cardData[activeToggle].map((card) => (
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div
+        key={card.id}
+        className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      >
         <a href="/">
-          <img class="p-8 rounded-t-lg" src={Apple} alt="product" />
+          <img className="p-8 rounded-full " src={Apple} alt="product" />
         </a>
-        <div class="px-5 pb-5">
-          <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+        <div className="px-5 pb-5">
+          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {card.title}
           </h5>
-          <div class="text-[14px] font-semibold tracking-tight text-gray-900 dark:text-slate-400">
-            {card.details}
+          <div className="text-[14px] font-semibold tracking-tight text-gray-900 dark:text-slate-400">
+            {card.description}
           </div>
 
           <div className="flex items-center mt-2.5 mb-5">
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
-              {renderStars(card.star)}
+              {renderStars(card.rating)}
               <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-                {card.star}.0
+                {card.rating}
               </span>
             </div>
           </div>
 
-          <span class="text-3xl font-bold text-gray-900 dark:text-white">
-            ₹<span className="ml-2">{card.price}</span>
+          <span className="text-3xl font-bold text-gray-900 dark:text-white">
+            ₹<span className="ml-2">{card.realPrice}</span>
           </span>
 
-          <div class="flex items-center justify-between mt-5">
+          <div className="flex items-center justify-between mt-5">
             <a
-              href="/"
-              class="text-slate-800 w-[45%] bg-blue-gradient hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-gradient dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              href={`/product/${card._id}`}
+              className="text-slate-800 w-[45%] bg-blue-gradient hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-gradient dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Buy Now
             </a>
             <a
               href="/"
-              class="text-slate-700 hover:text-white w-[45%] bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-white dark:hover:bg-slate-700 dark:focus:ring-blue-800"
+              className="text-slate-700 hover:text-white w-[45%] bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-white dark:hover:bg-slate-700 dark:focus:ring-blue-800"
             >
               Compare
             </a>
@@ -313,32 +197,34 @@ const Featured = () => {
             </button>
           </div>
         </div>
-        <div className="grid mt-10 sm:mt-0 sm:grid-cols-3 grid-cols-1 grid-rows-3 sm:grid-rows-2 gap-4">
-          {Card()}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <Card />
         </div>
-        <div className="justify-center text-center">
-          <button
-            type="button"
-            class="text-slate-800 mt-10 justify-center bg-blue-gradient hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Discover More
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
+        <a href={`/products/${activeToggle}`} className="">
+          <div className="justify-center text-center mb-5">
+            <button
+              type="button"
+              class="text-slate-800 mt-10 justify-center bg-blue-gradient font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </button>
-        </div>
+              Discover More
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </button>
+          </div>
+        </a>
       </div>
     </>
   );

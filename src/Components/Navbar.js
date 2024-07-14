@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../Images/ethaum.png";
 
-const Navbar = (props) => {
-  // const email = user.user.email;
-  const { user } = props;
-  console.log(user);
+const Navbar = () => {
+  const [username, setUsername] = useState(localStorage.getItem("username"));
+  const [pic, setPic] = useState(localStorage.getItem("pic"));
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("pic");
+    localStorage.removeItem("email");
+    setUsername(null);
+    setPic(null);
+  };
   return (
     <>
       <div class=" antialiased bg-primary pb-16 text-white">
@@ -320,11 +326,11 @@ const Navbar = (props) => {
                   Pricing
                 </a>
               </li>
-              {user ? (
+              {username ? (
                 <li class="relative group">
                   <img
                     className="h-10 w-10 ml-10 rounded-full"
-                    src={user.picture}
+                    src={pic}
                     alt=""
                   />
                   <div class="absolute top-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[200px] transform">
@@ -337,7 +343,7 @@ const Navbar = (props) => {
                               href="/"
                               class="text-gray-600 text-center hover:text-gray-800 py-1 block font-normal"
                             >
-                              Hello, {user.userName}
+                              Hello, {username}
                             </a>
                           </li>
                           <li>
@@ -351,8 +357,9 @@ const Navbar = (props) => {
 
                           <li>
                             <a
-                              href="https://ethaum.vercel.app/"
+                              href="/"
                               class="text-white bg-red-500  rounded-lg text-center py-1 block font-normal"
+                              onClick={handleLogout}
                             >
                               Logout
                             </a>
@@ -394,11 +401,11 @@ const Navbar = (props) => {
             </ul>
             {/* Mobile menu starts */}
             <ul class="flex sm:hidden items-center justify-center font-semibold">
-              {user ? (
+              {username ? (
                 <li class="relative group">
                   <img
                     className="h-10 w-10 ml-10 rounded-full"
-                    src={user.picture}
+                    src={pic}
                     alt=""
                   />
                   <div class="absolute top-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[200px] transform">
@@ -411,7 +418,7 @@ const Navbar = (props) => {
                               href="/"
                               class="text-gray-600 text-center hover:text-gray-800 py-1 block font-normal"
                             >
-                              Hello, {user.userName}
+                              Hello, {username}
                             </a>
                           </li>
                           <li>
@@ -425,8 +432,9 @@ const Navbar = (props) => {
 
                           <li>
                             <a
-                              href="https://ethaum.vercel.app/"
+                              href="/"
                               class="text-white bg-red-500  rounded-lg text-center py-1 block font-normal"
+                              onClick={handleLogout}
                             >
                               Logout
                             </a>

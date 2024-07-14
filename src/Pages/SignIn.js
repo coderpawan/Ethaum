@@ -20,7 +20,10 @@ const SignUp = () => {
               </h1>
               <div className="w-full flex-1 mt-8">
                 <div className="flex flex-col items-center">
-                  <a href="https://ethaum-backend.vercel.app/auth/google" className="">
+                  <a
+                    href="https://ethaum-backend.vercel.app/auth/google"
+                    className=""
+                  >
                     <button className="w-full max-w-xs px-14 font-bold shadow-sm rounded-lg py-3 bg-gray-700 text-gray-200 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:bg-gray-600 focus:shadow-outline">
                       <div className="bg-white p-2 rounded-full">
                         <svg className="w-4" viewBox="0 0 533.5 544.3">
