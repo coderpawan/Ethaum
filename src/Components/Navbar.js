@@ -351,7 +351,7 @@ const Navbar = (props) => {
 
                           <li>
                             <a
-                              href="http://localhost:3000/"
+                              href="https://ethaum.vercel.app/"
                               class="text-white bg-red-500  rounded-lg text-center py-1 block font-normal"
                             >
                               Logout
@@ -425,7 +425,7 @@ const Navbar = (props) => {
 
                           <li>
                             <a
-                              href="http://localhost:3000/"
+                              href="https://ethaum.vercel.app/"
                               class="text-white bg-red-500  rounded-lg text-center py-1 block font-normal"
                             >
                               Logout
