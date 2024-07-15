@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import ScrollTop from "../Components/Scrolltop";
 
 const renderStars = (rating) => {
   const fullStarsCount = Math.floor(rating);
@@ -51,6 +52,7 @@ const renderStars = (rating) => {
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const token = localStorage.getItem("username");
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -82,14 +84,15 @@ const ProductDetails = () => {
   return (
     <div className="bg-primary text-white w-full h-full">
       <Navbar />
-      <div className="container px-5 md:px-10 mx-auto py-12">
+      <ScrollTop />
+      <div className="container px-5 sm:px-10 mx-auto sm:py-12">
         <div className="flex flex-col md:flex-row mb-20 items-center md:items-start bg-gray-800 p-6 rounded-lg shadow-lg">
           <img
             src={product.picture}
             alt={product.title}
-            className="w-[400px] h-[400px] rounded-lg shadow-lg mb-6 md:mb-0"
+            className="sm:w-[400px] h-[300px] w-[300px] sm:h-[400px] rounded-lg shadow-lg mb-6 md:mb-0"
           />
-          <div className="ml-8 flex-1">
+          <div className="sm:ml-8 flex-1">
             <h2 className="text-4xl font-bold mb-4">{product.title}</h2>
             <p className="text-gray-400 mb-3">{product.vendor}</p>
             <div className="flex items-center mb-3 space-x-1 rtl:space-x-reverse">
@@ -117,12 +120,20 @@ const ProductDetails = () => {
                 </p>
               </div>
             </div>
-            <button
-              className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
-              onClick={() => alert("Order placed successfully!")}
-            >
-              Place Order
-            </button>
+            {token ? (
+              <button
+                className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+                onClick={() => alert("Order placed successfully!")}
+              >
+                Place Order
+              </button>
+            ) : (
+              <a href="/signup">
+                <button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                  Place Order
+                </button>
+              </a>
+            )}
           </div>
         </div>
         <Footer />

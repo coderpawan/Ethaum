@@ -18,6 +18,10 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x:hidden 
+} 
+
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
@@ -196,4 +200,25 @@
 }
 .shadowbutton{
   box-shadow: 10px 0 10px -10px white, -10px 0 10px -10px white;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -8px; /* Adjust this based on the height of the search bar */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #334155 transparent; /* Adjust the color to match the dropdown background */
 }

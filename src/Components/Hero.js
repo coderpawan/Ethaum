@@ -12,8 +12,8 @@ const Hero = () => {
         <div className="flex items-center gap-2 font-poppins bg-discount-gradient py-2 px-3 xs:px-5 text-lg rounded-xl w-[100%] xs:w-fit">
           <img src={discount} alt="discount" />
           <p className="sm:text-base text-xs">
-            20% <span className="text-[#5A595E] font-[500]">Discount For</span>{" "}
-            1 Month <span className="text-[#5A595E] font-[500]">Account</span>
+            20% <span className="text-slate-500 font-[500]">Discount For</span>{" "}
+            1 Month <span className="text-slate-500 font-[500]">Account</span>
           </p>
         </div>
 

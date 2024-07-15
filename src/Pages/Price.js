@@ -7,6 +7,7 @@ import {
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
 import FAQ from "../Components/FAQ";
+import ScrollTop from "../Components/Scrolltop";
 
 const comparisonData = [
   {
@@ -123,9 +124,10 @@ const Price = () => {
     <>
       <div className="bg-primary text-white w-full h-full">
         <Navbar />
+        <ScrollTop />
         <div className="container px-5 md:px-10 mx-auto ">
           <PricingTable />
-          <div className="bg-gray-900 text-gray-200 min-h-screen p-8 mb-10 rounded-2xl mt-20">
+          <div className="sm:bg-gray-900 text-gray-200 min-h-screen sm:p-8 mb-10 rounded-2xl sm:mt-20">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-10">
                 <h1 className="text-3xl font-extrabold">Compare Our Plans</h1>

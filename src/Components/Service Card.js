@@ -6,10 +6,10 @@ const ServiceCard = () => {
       <div className="flex flex-col gap-10 w-full bg-gray-800 rounded-3xl p-6 ss:px-10 ss:py-10 md:px-16 md:py-7 my-10 md:my-16">
         {/* <div className="flex sm:flex-row flex-col sm:gap-0 gap-10"> */}
         <div>
-          <h1 className="text-2xl ss:text-3xl md:text-4xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
+          <h1 className="text-xl ss:text-3xl md:text-4xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
             Popular software brands across all categories
           </h1>
-          <p className="mt-4 sm:mt-8">
+          <p className="text-sm sm:text-lg mt-4">
             Save big on SaaS products across every major software category.
           </p>
         </div>

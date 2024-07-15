@@ -5,6 +5,7 @@ import SignIn from "./Pages/SignIn";
 import Price from "./Pages/Price";
 import ProductDetails from "./Pages/ProductDetails";
 import Product from "./Pages/Product";
+import AllProduct from "./Pages/AllProducts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/price" element={<Price />} />
+          <Route exact path="/products" element={<AllProduct />} />
           <Route exact path="/products/:tag" element={<Product />} />
           <Route exact path="/product/:id" element={<ProductDetails />} />
         </Routes>

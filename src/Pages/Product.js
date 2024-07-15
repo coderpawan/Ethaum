@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import ScrollTop from "../Components/Scrolltop";
 
 const Product = () => {
   const [cardData, setCardData] = useState([]);
@@ -110,7 +111,7 @@ const Product = () => {
               Buy Now
             </a>
             <a
-              href="/"
+              href={`/product/${card._id}`}
               className="text-slate-700 hover:text-white w-[45%] bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-white dark:hover:bg-slate-700 dark:focus:ring-blue-800"
             >
               Compare
@@ -125,10 +126,11 @@ const Product = () => {
     <>
       <div className="bg-primary text-white w-full h-full">
         <Navbar />
-        <div className="container px-5 md:px-10 mx-auto py-12">
-          <div className="mb-12 py-8 px-12 bg-slate-800 rounded-3xl ">
+        <ScrollTop />
+        <div className="container px-5 md:px-10 mx-auto ">
+          <div className="mb-12 py-5 px-4 sm:px-12 bg-slate-800 rounded-3xl ">
             <h1 className="text-2xl text-center justify-center ss:text-3xl md:text-4xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
-              Our Featured Products
+              Our {tag} Products
             </h1>
             <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 gap-6">
               <Card />

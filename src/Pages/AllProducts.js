@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Apple from "../Images/apple-watch.png";
 import axios from "axios";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import ScrollTop from "../Components/Scrolltop";
 
-const Featured = () => {
+const AllProduct = () => {
   const [activeToggle, setActiveToggle] = useState("Featured");
   const [cardData, setCardData] = useState({
     Featured: [],
@@ -94,7 +97,7 @@ const Featured = () => {
     return cardData[activeToggle].map((card) => (
       <div
         key={card.id}
-        className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
       >
         <a href="/">
           <img className="p-8 rounded-full " src={Apple} alt="product" />
@@ -141,92 +144,99 @@ const Featured = () => {
 
   return (
     <>
-      <div className="mb-12 py-8 px-4 sm:px-12 bg-slate-800 rounded-3xl">
-        <h1 className="text-2xl ss:text-3xl md:text-4xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
-          Explore the MarketPlace
-        </h1>
-        <div className="flex flex-col items-center max-w-[20rem] mt-10 m-auto lg:mb-16">
-          <div className="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full">
-            <span
-              className="absolute inset-0 m-1 pointer-events-none"
-              aria-hidden="true"
-            >
-              <span
-                className={`absolute inset-0 w-1/3 bg-blue-gradient rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out ${
-                  activeToggle === "Featured"
-                    ? "translate-x-0"
-                    : activeToggle === "Top Deals"
-                    ? "translate-x-full"
-                    : "translate-x-[200%]"
-                }`}
-              ></span>
-            </span>
-            <button
-              className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-                activeToggle === "Featured"
-                  ? "text-slate-600"
-                  : "text-slate-500 dark:text-slate-400"
-              }`}
-              onClick={() => handleToggle("Featured")}
-              aria-pressed={activeToggle === "Featured"}
-            >
-              Featured
-            </button>
-            <button
-              className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-                activeToggle === "Top Deals"
-                  ? "text-slate-600"
-                  : "text-slate-500 dark:text-slate-400"
-              }`}
-              onClick={() => handleToggle("Top Deals")}
-              aria-pressed={activeToggle === "Top Deals"}
-            >
-              Top Deals
-            </button>
-            <button
-              className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-                activeToggle === "Popular"
-                  ? "text-slate-600"
-                  : "text-slate-500 dark:text-slate-400"
-              }`}
-              onClick={() => handleToggle("Popular")}
-              aria-pressed={activeToggle === "Popular"}
-            >
-              Popular
-            </button>
+      <div className="bg-primary text-white w-full h-full">
+        <Navbar />
+        <ScrollTop />
+        <div className="container px-5 md:px-10 mx-auto ">
+          <div className="mb-20 py-8 px-4 sm:px-12 bg-slate-800 rounded-3xl">
+            <h1 className="text-2xl ss:text-3xl md:text-4xl leading-normal sm:leading-relaxed md:leading-relaxed font-semibold">
+              Explore the MarketPlace
+            </h1>
+            <div className="flex flex-col items-center max-w-[20rem] mt-10 m-auto lg:mb-16">
+              <div className="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full">
+                <span
+                  className="absolute inset-0 m-1 pointer-events-none"
+                  aria-hidden="true"
+                >
+                  <span
+                    className={`absolute inset-0 w-1/3 bg-blue-gradient rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out ${
+                      activeToggle === "Featured"
+                        ? "translate-x-0"
+                        : activeToggle === "Top Deals"
+                        ? "translate-x-full"
+                        : "translate-x-[200%]"
+                    }`}
+                  ></span>
+                </span>
+                <button
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    activeToggle === "Featured"
+                      ? "text-slate-600"
+                      : "text-slate-500 dark:text-slate-400"
+                  }`}
+                  onClick={() => handleToggle("Featured")}
+                  aria-pressed={activeToggle === "Featured"}
+                >
+                  Featured
+                </button>
+                <button
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    activeToggle === "Top Deals"
+                      ? "text-slate-600"
+                      : "text-slate-500 dark:text-slate-400"
+                  }`}
+                  onClick={() => handleToggle("Top Deals")}
+                  aria-pressed={activeToggle === "Top Deals"}
+                >
+                  Top Deals
+                </button>
+                <button
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    activeToggle === "Popular"
+                      ? "text-slate-600"
+                      : "text-slate-500 dark:text-slate-400"
+                  }`}
+                  onClick={() => handleToggle("Popular")}
+                  aria-pressed={activeToggle === "Popular"}
+                >
+                  Popular
+                </button>
+              </div>
+            </div>
+            <div className="grid mt-5 sm:mt-0 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <Card />
+            </div>
+            <a href={`/products/${activeToggle}`} className="">
+              <div className="justify-center text-center mb-5">
+                <button
+                  type="button"
+                  class="text-slate-800 mt-10 justify-center bg-blue-gradient font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Discover More
+                  <svg
+                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
           </div>
+          <Footer />
         </div>
-        <div className="grid grid-cols-1 mt-5 sm:mt-0 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <Card />
-        </div>
-        <a href={`/products/${activeToggle}`} className="">
-          <div className="justify-center text-center mb-5">
-            <button
-              type="button"
-              class="text-slate-800 mt-10 justify-center bg-blue-gradient font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Discover More
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </button>
-          </div>
-        </a>
       </div>
     </>
   );
 };
 
-export default Featured;
+export default AllProduct;
