@@ -23,7 +23,7 @@ const ServiceCard = () => {
           </button> */}
         {/* </div> */}
         <div className="overflow-x-auto w-full h-14 shadow-white hide-scrollbar brands-logo flex items-center text-6xl xs:text-7xl ss:text-8xl justify-center sm:text-[130px] text-[#5f5f5fb8] cursor-pointer">
-          <div className="flex space-x-10 ml-[800px] mr-5 h-12">
+          <div className="flex space-x-10 ml-[1600px] sm:ml-[800px] mr-5 h-12">
             <button class="hover:shadow-md hover:shadow-white p-4 sm:p-3 text-lg rounded-lg bg-blue-gradient text-primary">
               Accounting,Finance
             </button>
