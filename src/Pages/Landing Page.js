@@ -449,12 +449,12 @@ const LandingPage = () => {
                   {username ? (
                     <li class="relative group">
                       <img
-                        className="h-10 w-10 ml-10 rounded-full"
+                        className="h-10 w-10 relative -left-5 ml-10 rounded-full"
                         src={pic}
                         alt=""
                       />
                       <div class="absolute top-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[200px] transform">
-                        <div class="relative top-6 -left-28 p-6 bg-white rounded-xl shadow-xl w-full">
+                        <div class="relative top-6 -left-32 p-6 bg-white rounded-xl shadow-xl w-full">
                           <div class="w-10 h-10 bg-white transform left-[140px] rotate-45 absolute top-0 z-0 -translate-x-4 transition-transform group-hover:translate-x-3 duration-500 ease-in-out rounded-sm"></div>
                           <div class="relative z-10">
                             <ul class="text-[15px]">
