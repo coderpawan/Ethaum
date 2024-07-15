@@ -93,7 +93,7 @@ const PricingTable = () => {
             </p>
             {/* Pricing toggle */}
             <div className="flex justify-center max-w-[14rem] mt-10 m-auto mb-8 lg:mb-16">
-              <div className="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full">
+              <div className="relative flex w-full p-1 bg-slate-900 rounded-full">
                 <span
                   className="absolute inset-0 m-1 pointer-events-none"
                   aria-hidden="true"
@@ -105,10 +105,8 @@ const PricingTable = () => {
                   ></span>
                 </span>
                 <button
-                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-                    isAnnual
-                      ? "text-slate-600"
-                      : "text-slate-500 dark:text-slate-400"
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    isAnnual ? "text-slate-600" : " text-slate-400"
                   }`}
                   onClick={() => setIsAnnual(true)}
                   aria-pressed={isAnnual}
@@ -116,19 +114,15 @@ const PricingTable = () => {
                   Yearly{" "}
                   <span
                     className={
-                      isAnnual
-                        ? "text-text-slate-600"
-                        : "text-slate-400 dark:text-slate-500"
+                      isAnnual ? "text-text-slate-600" : " text-slate-500"
                     }
                   >
                     -20%
                   </span>
                 </button>
                 <button
-                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-                    isAnnual
-                      ? "text-slate-500 dark:text-slate-400"
-                      : "text-slate-600"
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    isAnnual ? " text-slate-400" : "text-slate-600"
                   }`}
                   onClick={() => setIsAnnual(false)}
                   aria-pressed={!isAnnual}
@@ -149,8 +143,8 @@ const PricingTable = () => {
                   <div
                     className={`relative flex flex-col h-full rounded-2xl border-2 border-slate-900 shadow shadow-slate-950/5 ${
                       plan.mostPopular
-                        ? "sm:w-[400px]  dark:border-blue-400"
-                        : "dark:border-slate-900"
+                        ? "sm:w-[400px]  border-blue-400"
+                        : "border-slate-900"
                     }`}
                   >
                     {plan.mostPopular && (
@@ -160,15 +154,15 @@ const PricingTable = () => {
                         </div>
                       </div>
                     )}
-                    <div className="mb-5 p-6 bg-white dark:bg-slate-900 rounded-t-2xl">
-                      <div className="text-slate-900 dark:text-slate-200 font-semibold mb-1">
+                    <div className="mb-5 p-6 bg-slate-900 rounded-t-2xl">
+                      <div className=" text-slate-200 font-semibold mb-1">
                         {plan.name}
                       </div>
                       <div className="inline-flex items-baseline mb-2">
-                        <span className="text-slate-900 dark:text-slate-200 font-bold text-3xl">
+                        <span className=" text-slate-200 font-bold text-3xl">
                           $
                         </span>
-                        <span className="text-slate-900 dark:text-slate-200 font-bold text-4xl">
+                        <span className=" text-slate-200 font-bold text-4xl">
                           {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                         </span>
                         <span className="text-slate-500 font-medium">/mo</span>
@@ -177,10 +171,10 @@ const PricingTable = () => {
                         {plan.description}
                       </div>
                     </div>
-                    <div className="text-slate-900 px-6 dark:text-slate-200 font-medium mb-3">
+                    <div className=" px-6 text-slate-200 font-medium mb-3">
                       Includes:
                     </div>
-                    <ul className="text-slate-600 px-6 dark:text-slate-400 text-sm space-y-3 grow">
+                    <ul className=" px-6 text-slate-400 text-sm space-y-3 grow">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-center">
                           <svg
@@ -210,7 +204,7 @@ const PricingTable = () => {
                       className={`px-6 py-6 ${plan.mostPopular ? "pt-10" : ""}`}
                     >
                       <a
-                        className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-blue-gradient px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150"
+                        className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-blue-gradient px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150"
                         href="#0"
                       >
                         Purchase Plan

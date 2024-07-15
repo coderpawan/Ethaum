@@ -73,7 +73,7 @@ const AllProduct = () => {
       stars.push(
         <svg
           key={`star-empty-${i}`}
-          className="w-4 h-4 text-gray-200 dark:text-gray-600"
+          className="w-4 h-4 text-gray-600"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -97,42 +97,42 @@ const AllProduct = () => {
     return cardData[activeToggle].map((card) => (
       <div
         key={card.id}
-        className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        className="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700"
       >
         <a href="/">
           <img className="p-8 rounded-full " src={Apple} alt="product" />
         </a>
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="text-xl font-semibold tracking-tight text-white">
             {card.title}
           </h5>
-          <div className="text-[14px] font-semibold tracking-tight text-gray-900 dark:text-slate-400">
+          <div className="text-[14px] font-semibold tracking-tight text-slate-400">
             {card.description}
           </div>
 
           <div className="flex items-center mt-2.5 mb-5">
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
               {renderStars(card.rating)}
-              <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+              <span className=" text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-200 text-blue-800 ms-3">
                 {card.rating}
               </span>
             </div>
           </div>
 
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">
+          <span className="text-3xl font-bold text-white">
             ₹<span className="ml-2">{card.realPrice}</span>
           </span>
 
           <div className="flex items-center justify-between mt-5">
             <a
               href={`/product/${card._id}`}
-              className="text-slate-800 w-[45%] bg-blue-gradient hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-gradient dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-slate-800 w-[45%] bg-blue-gradient focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-gradient hover:bg-blue-700 focus:ring-blue-800"
             >
               Buy Now
             </a>
             <a
               href={`/product/${card._id}`}
-              className="text-slate-700 hover:text-white w-[45%] bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-white dark:hover:bg-slate-700 dark:focus:ring-blue-800"
+              className="text-slate-700 hover:text-white w-[45%] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-white hover:bg-slate-700 focus:ring-blue-800"
             >
               Compare
             </a>
@@ -153,7 +153,7 @@ const AllProduct = () => {
               Explore the MarketPlace
             </h1>
             <div className="flex flex-col items-center max-w-[20rem] mt-10 m-auto lg:mb-16">
-              <div className="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full">
+              <div className="relative flex w-full p-1 bg-slate-900 rounded-full">
                 <span
                   className="absolute inset-0 m-1 pointer-events-none"
                   aria-hidden="true"
@@ -169,10 +169,10 @@ const AllProduct = () => {
                   ></span>
                 </span>
                 <button
-                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
                     activeToggle === "Featured"
                       ? "text-slate-600"
-                      : "text-slate-500 dark:text-slate-400"
+                      : "text-slate-400"
                   }`}
                   onClick={() => handleToggle("Featured")}
                   aria-pressed={activeToggle === "Featured"}
@@ -180,10 +180,10 @@ const AllProduct = () => {
                   Featured
                 </button>
                 <button
-                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
                     activeToggle === "Top Deals"
                       ? "text-slate-600"
-                      : "text-slate-500 dark:text-slate-400"
+                      : "text-slate-400"
                   }`}
                   onClick={() => handleToggle("Top Deals")}
                   aria-pressed={activeToggle === "Top Deals"}
@@ -191,10 +191,10 @@ const AllProduct = () => {
                   Top Deals
                 </button>
                 <button
-                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
                     activeToggle === "Popular"
                       ? "text-slate-600"
-                      : "text-slate-500 dark:text-slate-400"
+                      : "text-slate-400"
                   }`}
                   onClick={() => handleToggle("Popular")}
                   aria-pressed={activeToggle === "Popular"}
@@ -210,7 +210,7 @@ const AllProduct = () => {
               <div className="justify-center text-center mb-5">
                 <button
                   type="button"
-                  class="text-slate-800 mt-10 justify-center bg-blue-gradient font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-slate-800 mt-10 justify-center bg-blue-gradient font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
                 >
                   Discover More
                   <svg

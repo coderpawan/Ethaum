@@ -53,7 +53,7 @@ const Product = () => {
       stars.push(
         <svg
           key={`star-empty-${i}`}
-          className="w-4 h-4 text-gray-200 dark:text-gray-600"
+          className="w-4 h-4 text-gray-600"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -77,42 +77,42 @@ const Product = () => {
     return cardData.map((card) => (
       <div
         key={card.id}
-        className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        className="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700"
       >
         <a href="/">
           <img className="p-8 rounded-full " src={Apple} alt="product" />
         </a>
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="text-xl font-semibold tracking-tight text-white">
             {card.title}
           </h5>
-          <div className="text-[14px] font-semibold tracking-tight text-gray-900 dark:text-slate-400">
+          <div className="text-[14px] font-semibold tracking-tight text-slate-400">
             {card.description}
           </div>
 
           <div className="flex items-center mt-2.5 mb-5">
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
               {renderStars(card.rating)}
-              <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+              <span className=" text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-200 text-blue-800 ms-3">
                 {card.rating}
               </span>
             </div>
           </div>
 
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">
+          <span className="text-3xl font-bold text-white">
             ₹<span className="ml-2">{card.realPrice}</span>
           </span>
 
           <div className="flex items-center justify-between mt-5">
             <a
               href={`/product/${card._id}`}
-              className="text-slate-800 w-[45%] bg-blue-gradient hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-gradient dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-slate-800 w-[45%] bg-blue-gradient focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-gradient hover:bg-blue-700 focus:ring-blue-800"
             >
               Buy Now
             </a>
             <a
               href={`/product/${card._id}`}
-              className="text-slate-700 hover:text-white w-[45%] bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-white dark:hover:bg-slate-700 dark:focus:ring-blue-800"
+              className="text-slate-700 hover:text-white w-[45%] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-white hover:bg-slate-700 focus:ring-blue-800"
             >
               Compare
             </a>
