@@ -83,7 +83,7 @@ const Testimonials = () => {
                   className="flex flex-col w-[270px] sm:w-[400px] gap-10 feature-card rounded-2xl px-5 sm:px-10 md:px-6 py-10 ss:py-14 lg:px-10"
                 >
                   <RiDoubleQuotesL className="text-5xl text-secondary" />
-                  <p className="leading-normal text-base text-dimWhite h-40">
+                  <p className="leading-normal text-base text-dimWhite">
                     {about}
                   </p>
                   <div className="flex items-center gap-2">
