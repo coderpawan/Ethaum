@@ -1045,7 +1045,7 @@ const SearchBar = () => {
 
   return (
     <div className="">
-      <div className="rounded-xl w-[150px] h-8 bg-slate-700 mx-4 flex items-center gap-3 px-4">
+      <div className="rounded-xl sm:w-[150px] h-8 bg-slate-700 mx-4 flex items-center gap-3 px-4">
         <input
           className="outline-none text-gray-400 bg-slate-700 text-md font-semibold w-full"
           type="text"

@@ -25,7 +25,7 @@ const ScrollTop = () => {
     <div className="overflow-hidden">
       <button
         aria-label="arrow"
-        className={`fixed bottom-12 sm:bottom-10 z-30 -right-full transition-all duration-500 shadow-2xl shadow-black bg-white hover:bg-[#cdcdcd] active:p-[.45rem] p-2 rounded`}
+        className={`fixed bottom-8 sm:bottom-10 z-30 -right-full transition-all duration-500 shadow-2xl shadow-black bg-white hover:bg-[#cdcdcd] active:p-[.45rem] p-2 rounded`}
         onClick={scrollToTop}
         ref={arrow}
       >

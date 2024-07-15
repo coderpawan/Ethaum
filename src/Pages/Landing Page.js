@@ -413,9 +413,9 @@ const LandingPage = () => {
                   <li className="">
                     <a
                       href="/signup"
-                      class="rounded-full px-3 py-2 text-white hover:text-gray-700 font-semibold cursor-pointer lg:px-4  hover:bg-gray-300 flex items-center group"
+                      class="rounded-full px-1 sm:px-3 py-2 text-white hover:text-gray-700 font-semibold cursor-pointer lg:px-4  hover:bg-gray-300 flex items-center group"
                     >
-                      <span class="mr-2">Sign in</span>
+                      <span class="w-[50px] mr-2">Sign in</span>
                       <svg
                         class="stroke-current"
                         width="10"
@@ -493,9 +493,9 @@ const LandingPage = () => {
                     <li className="">
                       <a
                         href="/signup"
-                        class="rounded-full px-3 py-2 text-white hover:text-gray-700 font-semibold cursor-pointer lg:px-4  hover:bg-gray-300 flex items-center group"
+                        class="rounded-full px-1 sm:px-3 py-2 text-white hover:text-gray-700 font-semibold cursor-pointer lg:px-4  hover:bg-gray-300 flex items-center group"
                       >
-                        <span class="mr-2">Sign in</span>
+                        <span class="w-[50px] mr-2">Sign in</span>
                         <svg
                           class="stroke-current"
                           width="10"
