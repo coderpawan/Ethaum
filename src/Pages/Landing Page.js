@@ -388,7 +388,7 @@ const LandingPage = () => {
                             </li>
                             <li>
                               <a
-                                href="/"
+                                href="https://ethaum-dashboard-frontend.vercel.app/"
                                 class="text-gray-600 bg-blue-gradient rounded-lg my-2 text-center hover:text-gray-800 py-1 block font-normal"
                               >
                                 Dashboard
@@ -468,7 +468,7 @@ const LandingPage = () => {
                               </li>
                               <li>
                                 <a
-                                  href="/"
+                                  href="https://ethaum-dashboard-frontend.vercel.app/"
                                   class="text-gray-600 bg-blue-gradient rounded-lg my-2 text-center hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Dashboard
