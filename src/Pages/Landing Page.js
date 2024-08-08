@@ -849,8 +849,8 @@ const LandingPage = () => {
         <ServiceCard />
         <Testimonials />
         {/* <Category /> */}
-        <Pricing />
-        <a href="/price" className="">
+        {/* <Pricing /> */}
+        {/* <a href="/price" className="">
           <div className="justify-center text-center mb-24">
             <button
               type="button"
@@ -874,7 +874,7 @@ const LandingPage = () => {
               </svg>
             </button>
           </div>
-        </a>
+        </a> */}
         <Footer />
       </div>
     </div>
