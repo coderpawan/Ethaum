@@ -8,7 +8,7 @@ const Featured = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://e-commerce-backend-five-jade.vercel.app/api/products/");
+        const response = await axios.get("https://ethaum-backend.vercel.app/api/products/");
         const data = response.data;
 
         // Organize data by type

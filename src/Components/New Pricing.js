@@ -67,7 +67,7 @@ const PricingTable = () => {
   useEffect(() => {
     const fetchPricingPlans = async () => {
       try {
-        const response = await axios.get("https://e-commerce-backend-five-jade.vercel.app/api/priceplan");
+        const response = await axios.get("https://ethaum-backend.vercel.app/api/priceplan");
         setPricingPlans(response.data);
       } catch (error) {
         console.error("Error fetching pricing plans:", error);

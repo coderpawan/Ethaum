@@ -52,7 +52,7 @@ const Testimonials = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          "https://e-commerce-backend-five-jade.vercel.app/api/testimonial"
+          "https://ethaum-backend.vercel.app/api/testimonial"
         );
         setTestimonials(response.data);
       } catch (error) {

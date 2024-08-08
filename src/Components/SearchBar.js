@@ -1014,7 +1014,7 @@ const SearchBar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://e-commerce-backend-five-jade.vercel.app/api/searchbar");
+        const response = await axios.get("https://ethaum-backend.vercel.app/api/searchbar");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

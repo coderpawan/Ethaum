@@ -63,7 +63,7 @@ const ProductDetails = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `https://e-commerce-backend-five-jade.vercel.app/api/products/${id}`
+          `https://ethaum-backend.vercel.app/api/products/${id}`
         );
         setProduct(response.data);
       } catch (error) {
@@ -89,7 +89,7 @@ const ProductDetails = () => {
   const handleReviewSubmit = async () => {
     try {
       const response = await axios.post(
-        `https://e-commerce-backend-five-jade.vercel.app/api/products/${id}/review`,
+        `https://ethaum-backend.vercel.app/api/products/${id}/review`,
         { user: token, comment: review, rating: rating },
         {
           headers: {
